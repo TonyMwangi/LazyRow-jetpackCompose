@@ -7,9 +7,9 @@
 -Added a column to arrange the components vertically <br><br>
 -Inside the column added a LazyColumn so that the added LazyRows items can be scrollable vertically <br><br>
 -Used the LazyColumn item to: <br>
-      -Add a row for the categories of moviez <br>
-      -Add the LazyRow that displays the composable objects as items(passed every instance of the data class as an item of to the LazyRow) <br><br> 
--Reused the data class instances to create moviez objects under the different moviez categories <br><br><br><br> 
+      &nbsp; &nbsp;-Add a row for the categories of moviez <br>
+      &nbsp; &nbsp;-Add the LazyRow that displays the composable objects as items(passed every instance of the data class as an item of to the LazyRow) <br><br> 
+-Reused the data class instances to create moviez objects under the different moviez categories <br><br><br> 
 
 ## LazyRow Design <br><br><br>
 
