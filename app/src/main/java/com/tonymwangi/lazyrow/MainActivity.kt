@@ -5,11 +5,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -28,15 +31,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LazyRowTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize().background(color = Color.Black),
-                    //color = MaterialTheme.colors.background
-                ) {
-                    LazyColumn(contentPadding = PaddingValues(vertical = 20.dp))
+                Surface(color = MaterialTheme.colors.background) {
+                    LazyColumn(contentPadding = PaddingValues(vertical = 20.dp),
+                        modifier = Modifier.fillMaxSize().background(color = Color.Black),)
                     {
                         item {
-                            Row(modifier = Modifier.fillMaxWidth(1f).padding(vertical = 20.dp),
+                            Row(modifier = Modifier.fillMaxWidth(1f).padding(0.dp, 20.dp, 0.dp, 30.dp),
                             horizontalArrangement = Arrangement.Center) {
                                 Text(text = "NETFLIX MOVIEZ",
                                     color = Color.Red,
@@ -47,11 +47,151 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                         item {
-                            Row(modifier = Modifier.fillMaxWidth(1f)) {
+                            Row(modifier = Modifier.fillMaxWidth(1f)
+                                .padding(6.dp, 0.dp,0.dp, 0.dp)) {
+                                Text(text = "Continue Watching For Netflix Member",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 20.sp
+                                )
+
+                            }
+                        }
+                        item {
+                            LazyRow(modifier = Modifier
+                                .fillMaxWidth(1f)
+                                .padding(0.dp, 10.dp,0.dp,10.dp)
+                                //.background(color = Color.Black)
+                            )
+                            {
+                                items(movies) { movie ->
+                                    ScrollableRow(movie)
+                                }
+                            }
+                        }
+                        item {
+                            Row(modifier = Modifier.fillMaxWidth(1f)
+                                .padding(6.dp, 0.dp,0.dp, 0.dp)) {
+                                Text(text = "New Release",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 20.sp
+                                )
+
+                            }
+                        }
+                        item {
+                            LazyRow(modifier = Modifier
+                                .fillMaxWidth(1f)
+                                .padding(0.dp, 10.dp,0.dp,10.dp)
+                                //.background(color = Color.Black)
+                            )
+                            {
+                                items(movies) { movie ->
+                                    ScrollableRow(movie)
+                                }
+                            }
+                        }
+                        item {
+                            Row(modifier = Modifier.fillMaxWidth(1f)
+                                .padding(6.dp, 0.dp,0.dp, 0.dp)
+                                ) {
                                 Text(text = "Trending Now",
                                     color = Color.White,
                                     fontWeight = FontWeight.Bold,
-                                    fontSize = 18.sp
+                                    fontSize = 20.sp
+                                )
+
+                            }
+                        }
+                        item {
+                            LazyRow(modifier = Modifier
+                                .fillMaxWidth(1f)
+                                .padding(0.dp, 10.dp,0.dp,10.dp)
+                                //.background(color = Color.Black)
+                            )
+                            {
+                                items(movies) { movie ->
+                                    ScrollableRow(movie)
+                                }
+                            }
+                        }
+                        item {
+                            Row(modifier = Modifier.fillMaxWidth(1f)
+                                .padding(6.dp, 0.dp,0.dp, 0.dp)) {
+                                Text(text = "Tv Series",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 20.sp
+                                )
+
+                            }
+                        }
+                        item {
+                            LazyRow(modifier = Modifier
+                                .fillMaxWidth(1f)
+                                .padding(0.dp, 10.dp,0.dp,10.dp)
+                                //.background(color = Color.Black)
+                            )
+                            {
+                                items(movies) { movie ->
+                                    ScrollableRow(movie)
+                                }
+                            }
+                        }
+                        item {
+                            Row(modifier = Modifier.fillMaxWidth(1f)
+                                .padding(6.dp, 0.dp,0.dp, 0.dp)) {
+                                Text(text = "Only on Netflix ",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 20.sp
+                                )
+
+                            }
+                        }
+                        item {
+                            LazyRow(modifier = Modifier
+                                .fillMaxWidth(1f)
+                                .padding(0.dp, 10.dp,0.dp,10.dp)
+                                //.background(color = Color.Black)
+                            )
+                            {
+                                items(movies) { movie ->
+                                    ScrollableRow(movie)
+                                }
+                            }
+                        }
+                        item {
+                            Row(modifier = Modifier.fillMaxWidth(1f)
+                                .padding(6.dp, 0.dp,0.dp, 0.dp)) {
+                                Text(text = "High School Tv Dramas ",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 20.sp
+                                )
+
+                            }
+                        }
+                        item {
+                            LazyRow(modifier = Modifier
+                                .fillMaxWidth(1f)
+                                .padding(0.dp, 10.dp,0.dp,10.dp)
+                                //.background(color = Color.Black)
+                            )
+                            {
+                                items(movies) { movie ->
+                                    ScrollableRow(movie)
+                                }
+                            }
+                        }
+                        item {
+                            Row(modifier = Modifier.fillMaxWidth(1f)
+                                .padding(6.dp, 0.dp,0.dp, 0.dp)) {
+                                Text(text = " Top Picks for Netflix Member",
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 20.sp
                                 )
 
                             }
@@ -84,45 +224,45 @@ data class Movies(
 val movies = listOf(
     Movies(
         image = R.drawable.city7,
-        name = "Into The BadLand",
+        name = "MONEY HEIST",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "5.5"
     ),
     Movies(
         image = R.drawable.city1,
-        name = "Beach of Death ",
+        name = "DEATH BEACH ",
         ratingIcon = R.drawable.rating,
         rating = "5.0"
     ),
     Movies(
         image = R.drawable.city2,
-        name = "Call Me Annah",
+        name = "ANNAH",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "5.3"
     ),
     Movies(
         image = R.drawable.city3,
-        name = "Better Today",
+        name = "INTO THE BADLAND",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "4.0"
     ),
     Movies(
         image = R.drawable.city4,
-        name = "Dear Tony Evans",
+        name = "The Protector",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "5.1"
     ),
     Movies(
         image = R.drawable.city10,
         name = "Imitatition Game",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "3.0"
     ),
     Movies(
         image = R.drawable.city5,
-        name = "Moonrise Kingdom",
+        name = "LUTHER",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "4.9"
     ),
     Movies(
         image = R.drawable.city7,
@@ -132,39 +272,39 @@ val movies = listOf(
     ),
     Movies(
         image = R.drawable.city8,
-        name = "Rain Man",
+        name = "DEALER",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "4.1"
     ),
     Movies(
         image = R.drawable.city9,
         name = "Night Crawler",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "4.6"
     ),
     Movies(
         image = R.drawable.city10,
         name = "Shadows",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "3.8"
     ),
     Movies(
         image = R.drawable.city7,
-        name = "Worrier One",
+        name = "FATE",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "4.5"
     ),
     Movies(
         image = R.drawable.city4,
         name = "Titanic",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "4.7"
     ),
     Movies(
         image = R.drawable.city7,
         name = "Xanar",
         ratingIcon = R.drawable.rating,
-        rating = "5.0"
+        rating = "4.9"
     ),
 )
 
@@ -173,64 +313,66 @@ fun ScrollableRow(movie : Movies) {
     val companyIcon = R.drawable.netflix
     Box(
         modifier = Modifier
-            .width(222.dp)
-            .height(133.dp)
-            .clip(shape = RoundedCornerShape(10.dp))
-            .padding(4.dp)
+            .width(225.dp)
+            .height(132.dp)
+            .padding(6.dp)
+            .clip(shape = RoundedCornerShape(8.dp))
             .background(Color.White)
+            .border(1.dp, Color.White, shape = RoundedCornerShape(8.dp))
+
     )
     {
 
         Image(
             painter = painterResource(id = movie.image),
             modifier = Modifier
-                .width(220.dp)
-                .height(133.dp)
-                .clip(shape = RoundedCornerShape(10.dp))
+                .width(225.dp)
+                .height(132.dp)
+                .clip(shape = RoundedCornerShape(8.dp))
                 .align(alignment = Alignment.TopCenter),
             contentDescription = null
         )
         Image(
             painter = painterResource(id = companyIcon),
             modifier = Modifier
-                .size(15.dp)
+                .size(20.dp)
                 .align(alignment = Alignment.TopStart)
                 .padding(2.dp, 8.dp, 0.dp, 0.dp),
             contentDescription = null
         )
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.Center,
                 modifier = Modifier
-                    .padding(5.dp, 0.dp, 5.dp, 15.dp)
+                    .padding(0.dp, 5.dp,0.dp, 5.dp)
                     .fillMaxWidth(1f)
-                    .align(Alignment.BottomStart)
+                    .align(Alignment.Center)
             ) {
                 Text(
                     text = movie.name,
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 14.sp
+                    fontSize = 18.sp
                 )
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(1.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = movie.ratingIcon),
-                        modifier = Modifier.size(17.dp),
-                        contentDescription = null
-                    )
-                    Text(
-                        text = movie.rating,
-                        color = Color.White,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 14.sp
-                    )
-                }
-
-
             }
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(2.dp),
+            modifier = Modifier.align(Alignment.BottomCenter)
+                .padding(0.dp, 8.dp,0.dp, 20.dp)
+        ) {
+            Image(
+                painter = painterResource(id = movie.ratingIcon),
+                modifier = Modifier.size(20.dp),
+                contentDescription = null
+            )
+            Text(
+                text = movie.rating,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                fontSize = 16.sp
+            )
+        }
 
 
         }
