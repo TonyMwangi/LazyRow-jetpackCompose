@@ -1,8 +1,8 @@
 # LazyRow-jetpackCompose <br>
 
--Created a data class that models a netfix movie object <br><br>
--created a composable ScrollableRow function that accepts a movie object to be passed to it as a parameter <br><br>
--Using the ScrollableRow function designed the moviez display Screen <br><br>
+* Created a data class that models a netfix movie object <br><br>
+* created a composable ScrollableRow function that accepts a movie object to be passed to it as a parameter <br><br>
+* Using the ScrollableRow function designed the moviez display Screen <br><br>
 -Used Scaffold as the base of moviez display screen <br><br>
 -Added a column to arrange the components vertically <br><br>
 -Inside the column added a LazyColumn so that the added LazyRows items can be scrollable vertically <br><br>
